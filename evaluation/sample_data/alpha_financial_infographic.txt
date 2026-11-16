@@ -1,0 +1,6 @@
+PROJECT ALPHA: 2026 FINANCIAL & METRICS INFOGRAPHIC.
+APPROVED ANNUAL BUDGET: $800,000 ($800K) - Status: Approved by Finance Board (Q1).
+BENCHMARK PRECISION: 94.2% Precision - Status: Verified by Zurich AI Labs.
+Throughput Capacity: 450 QPS (Queries per second).
+Average Response Latency: 185ms (P95 Latency: 240ms).
+Primary Infrastructure: Weaviate Vector Store & Neo4j KG.

@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-11-16 22:17:01",
+  "dataset_summary": {
+    "total_test_queries": 4,
+    "total_indexed_chunks": 8,
+    "total_indexed_triples": 65
+  },
+  "ingestion_latency_by_modality": {
+    "document": {
+      "file": "alpha_annual_report.pdf",
+      "chunks_count": 3,
+      "ingest_ms": 71.54,
+      "representation_ms": 2323.38,
+      "total_ms": 2394.92
+    },
+    "image": {
+      "file": "alpha_financial_infographic.png",
+      "chunks_count": 2,
+      "ingest_ms": 6406.11,
+      "representation_ms": 1349.67,
+      "total_ms": 7755.78
+    },
+    "audio": {
+      "file": "alpha_standup_recording.wav",
+      "chunks_count": 3,
+      "ingest_ms": 1.79,
+      "representation_ms": 383.7,
+      "total_ms": 385.49
+    }
+  },
+  "retrieval_benchmark_comparison": {
+    "k": 3,
+    "vector_only": {
+      "precision_at_k": 0.9167,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "mean_latency_ms": 135.25
+    },
+    "graph_only": {
+      "precision_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "mean_latency_ms": 0.7
+    },
+    "proposed_hybrid": {
+      "precision_at_k": 0.8333,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "mean_latency_ms": 3117.86
+    }
+  },
+  "conflict_detection_metrics": {
+    "conflict_precision": 0.5,
+    "conflict_recall": 1.0,
+    "conflict_f1": 0.6667,
+    "true_positives": 1,
+    "false_positives": 1,
+    "false_negatives": 0,
+    "true_negatives": 2,
+    "sample_conflict": [
+      {
+        "chunk_id_a": "alpha_annual_report_doc_p1_c0",
+        "chunk_id_b": "alpha_financial_infographic_img_0",
+        "source_a": "alpha_annual_report",
+        "source_b": "alpha_financial_infographic",
+        "modality_a": "document",
+        "modality_b": "image",
+        "claim_a": "Approved budget stated as $1,200,000",
+        "claim_b": "Approved budget stated as $800",
+        "conflict_type": "numeric_mismatch",
+        "explanation": "Factual budget contradiction: alpha_annual_report (document) specifies $1,200,000 whereas alpha_financial_infographic (image) states $800."
+      }
+    ]
+  },
+  "stage_latency_profiling_ms": {
+    "retrieval_ms": 3116.12,
+    "rerank_mmr_ms": 1402.26,
+    "conflict_graph_ms": 1.19,
+    "llm_generation_ms": 0.51,
+    "total_query_ms": 3117.86
+  }
+}

@@ -1,0 +1,51 @@
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Frontend build artifacts
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.vite/
+frontend/.vite/
+dist/
+
+# Environment secrets
+.env
+backend/.env
+*.env.local
+*.env.*.local
+
+# Local storage & user uploads
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+backend/data/vectors/*
+!backend/data/vectors/.gitkeep
+backend/data/graph/*
+!backend/data/graph/.gitkeep
+
+# Editor & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log

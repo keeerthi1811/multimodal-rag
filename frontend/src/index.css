@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  /* Daylight Editorial Palette from ScholarDesk */
+  --bg-canvas: #FAF9F6;
+  --bg-card: #FFFFFF;
+  --bg-sidebar: #F5F3EF;
+  --bg-muted: #EFECE6;
+  --bg-subtle: #E5E1D8;
+
+  --border-light: #E5E1D8;
+  --border-card: #ECE8E1;
+  --border-hairline: #EDE9E2;
+  --border-focus: #1B4332;
+
+  --text-main: #1C1917;
+  --text-secondary: #57534E;
+  --text-muted: #8C827A;
+
+  --accent-primary: #1B4332;
+  --accent-hover: #143225;
+  --accent-tint: #EAF2ED;
+  --accent-badge: #1B4332;
+
+  --amber-tint: #FEF3C7;
+  --amber-text: #92400E;
+  --amber-border: #FDE68A;
+
+  --danger: #991B1B;
+  --danger-bg: #FEF2F2;
+  --danger-border: #FCA5A5;
+
+  --success: #166534;
+  --success-bg: #F0FDF4;
+  --success-border: #BBF7D0;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+}

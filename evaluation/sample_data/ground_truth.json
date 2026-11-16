@@ -1,0 +1,78 @@
+{
+  "benchmark_name": "Multimodal Hybrid Vector-Graph Evaluation Suite",
+  "version": "1.0.0",
+  "description": "Ground truth evaluation dataset testing retrieval precision, recall, MRR, and cross-modal conflict detection across PDF, Image, and Audio.",
+  "test_cases": [
+    {
+      "id": "TC_01",
+      "query": "What is the approved fiscal budget for Project Alpha in 2026?",
+      "target_keywords": [
+        "budget",
+        "$1,200,000",
+        "$1.2M",
+        "$800,000",
+        "$800K"
+      ],
+      "relevant_sources": [
+        "alpha_annual_report",
+        "alpha_financial_infographic"
+      ],
+      "has_conflict": true,
+      "expected_conflicts": [
+        {
+          "source_a": "alpha_annual_report",
+          "source_b": "alpha_financial_infographic",
+          "nature": "numeric_mismatch",
+          "claim_a": "$1,200,000 ($1.2M)",
+          "claim_b": "$800,000 ($800K)"
+        }
+      ]
+    },
+    {
+      "id": "TC_02",
+      "query": "What retrieval precision and query latency was achieved by Project Alpha?",
+      "target_keywords": [
+        "94.2%",
+        "precision",
+        "185ms",
+        "latency"
+      ],
+      "relevant_sources": [
+        "alpha_annual_report",
+        "alpha_financial_infographic"
+      ],
+      "has_conflict": false,
+      "expected_conflicts": []
+    },
+    {
+      "id": "TC_03",
+      "query": "Who is the lead investigator and where is Project Alpha located?",
+      "target_keywords": [
+        "Elena Vance",
+        "Zurich",
+        "Lead Investigator"
+      ],
+      "relevant_sources": [
+        "alpha_annual_report"
+      ],
+      "has_conflict": false,
+      "expected_conflicts": []
+    },
+    {
+      "id": "TC_04",
+      "query": "What are the core database technologies used in the system architecture?",
+      "target_keywords": [
+        "Weaviate",
+        "Neo4j",
+        "vector",
+        "graph"
+      ],
+      "relevant_sources": [
+        "alpha_annual_report",
+        "alpha_financial_infographic"
+      ],
+      "has_conflict": false,
+      "expected_conflicts": []
+    }
+  ]
+}
